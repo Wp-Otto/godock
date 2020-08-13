@@ -33,7 +33,6 @@ RUN wget ${GO_PACKAGE_URL} && \
     echo export GOBIN=$GOPATH/bin >> ~/.bashrc && \
     export PATH=$PATH:$GOROOT/bin && \
     echo "" >> ~/.bashrc && \
-    source ~/.bashrc  && \
     echo "go workspace build complete!"
 
 
