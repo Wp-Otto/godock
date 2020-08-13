@@ -24,7 +24,7 @@ ARG GO111MODULE
 ARG GO111MODULE=auto
 ARG GO_PACKAGE_URL=https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
 RUN wget ${GO_PACKAGE_URL} && \
-    tar -C /usr/local -xzf ${GO_PACKAGE_URL} && \
+    tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz && \
     rm go${GO_VERSION}.linux-amd64.tar.gz && \
     echo "" >> ~/.bashrc && \
     echo export GO111MODULE=${GO111MODULE} >> ~/.bashrc && \
