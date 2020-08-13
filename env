@@ -1,0 +1,52 @@
+###########################################################
+###################### General Setup ######################
+###########################################################
+
+### Paths #################################################
+
+# Point to the path of your applications code on your host
+APP_CODE_PATH_HOST=../
+
+# Point to where the `APP_CODE_PATH_HOST` should be in the container
+APP_CODE_PATH_CONTAINER=/var/www
+
+### Drivers ################################################
+
+# All volumes driver
+VOLUMES_DRIVER=local
+
+# All Networks driver
+NETWORKS_DRIVER=bridge
+
+### Docker compose files ##################################
+
+# Select which docker-compose files to include 
+COMPOSE_FILE=docker-compose.yml
+
+# Change the separator from : to ; on Windows
+COMPOSE_PATH_SEPARATOR=:
+
+# Define the prefix of container names. This is useful if you have multiple projects that use laradock to have separate containers per project.
+COMPOSE_PROJECT_NAME=godock
+
+### Go WorkSpace ##################################
+UBUNTU_BASE_IMAGE_TAG_PREFIX=latest
+GO_VERSION=1.13.10
+GO111MODULE=auto
+GO_WORKSPACE_API_SERVE_HOST_PORT=8080
+WORKSPACENAME=wxp
+
+### MYSQL #################################################
+
+MYSQL_VERSION=latest
+MYSQL_DATABASE=default
+MYSQL_USER=default
+MYSQL_PASSWORD=secret
+MYSQL_PORT=3306
+MYSQL_ROOT_PASSWORD=root
+MYSQL_ENTRYPOINT_INITDB=./mysql/docker-entrypoint-initdb.d
+
+### REDIS #################################################
+
+REDIS_PORT=6379
+
