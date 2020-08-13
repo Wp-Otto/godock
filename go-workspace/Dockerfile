@@ -6,9 +6,9 @@
 
 ARG BASE_IMAGE_TAG_PREFIX
 ARG BASE_IMAGE_TAG_PREFIX=latest
-FROM lubuntu:${BASE_IMAGE_TAG_PREFIX}
+FROM ubuntu:${BASE_IMAGE_TAG_PREFIX}
 
-LABEL maintainer="Wp-Otto <wxp@gmail.com>"
+LABEL maintainer="Wp-Otto <wxp3710@gmail.com>"
 
 # Start as root
 USER root
