@@ -15,7 +15,7 @@ USER root
 
 # Install base tools
 RUN apt-get update && \
-    apt-get install -y tar wget curl vim 
+    apt-get install -y tar wget curl vim git
 
 # Install go environment 
 ARG GO_VERSION
