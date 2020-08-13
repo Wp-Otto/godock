@@ -30,7 +30,7 @@ RUN wget ${GO_PACKAGE_URL} && \
     echo export GO111MODULE=${GO111MODULE} >> ~/.bashrc && \
     echo export GOROOT=/usr/local/go  >> ~/.bashrc && \
     echo export GOPATH=~/gowork >> ~/.bashrc && \
-    echo export GOBIN=$GOPATH/bin >> ~/.bashrc && \
+    echo export GOBIN=~/gowork/bin >> ~/.bashrc && \
     echo export PATH="$"PATH:/usr/local/go/bin >> ~/.bashrc && \
     echo "" >> ~/.bashrc && \
     echo "go workspace build complete!"
