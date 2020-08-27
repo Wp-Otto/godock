@@ -123,3 +123,15 @@ services:
       - ${DATA_PATH_HOST}/cassandra:/var/lib/cassandra
     networks:
       - backend
+
+  ### MongoDB ##############################################
+  mongo:
+    build: ./mongo
+    ports:
+      - "${MONGODB_PORT}:27017"
+    volumes:
+      - ${DATA_PATH_HOST}/mongo:/data/db
+      - ${DATA_PATH_HOST}/mongo_config:/data/configdb
+    networks:
+      - backend
+
