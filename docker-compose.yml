@@ -151,3 +151,14 @@ services:
       - backend
     depends_on:
       - mongo
+
+  ### ZooKeeper #########################################
+  zookeeper:
+    build: ./zookeeper
+    volumes:
+      - ${DATA_PATH_HOST}/zookeeper/data:/data
+      - ${DATA_PATH_HOST}/zookeeper/datalog:/datalog
+    ports:
+      - "${ZOOKEEPER_PORT}:2181"
+    networks:
+      - backend
