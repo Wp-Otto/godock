@@ -162,3 +162,22 @@ services:
       - "${ZOOKEEPER_PORT}:2181"
     networks:
       - backend
+
+  ### Kafka #########################################
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - 9092:9092
+    environment:
+      KAFKA_BROKER_ID: 0
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://192.168.110.87:9092 # 主机ip
+      KAFKA_CREATE_TOPICS: "default_topic:2:0"   #kafka启动后初始化一个有2个partition(分区)0个副本名叫default_topic的topic 
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    volumes:
+      - ${DATA_PATH_HOST}/kafka/logs:/kafka
+    depends_on:
+      - zookeeper
+    networks:
+      - backend
